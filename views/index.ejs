@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="/javascripts/jquery-3.6.1.min.js"></script>
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <a href="/employee">Employee</a>
+    <table id="tablem">
+      <tr>
+        <th>name</th>
+        <th>phone</th>
+        <th>email</th>
+      </tr>
+        <%
+        if(sampleData.length > 0 ){
+          sampleData.forEach(function(datas){
+        %>
+        <tr>
+          <td><%= datas.name%></td>
+          <td><%= datas.phone%></td>
+          <td><%= datas.email%></td>
+        </tr>
+        <%
+      });
+        }else{
+          %>
+          <tr>
+            <td>no data</td>
+          </tr>
+          <%
+        }
+        %>
+    </table>
+  </body>
+</html>
